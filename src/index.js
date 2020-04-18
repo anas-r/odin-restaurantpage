@@ -1,6 +1,8 @@
 import * as homepage from './homepage';
 import * as story from './story';
 
+import './styles.css';
+
 const menu = (() => {
     const content = document.querySelector("#content");
     const clearMenu = (menuOptions) => {

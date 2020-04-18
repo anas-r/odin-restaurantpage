@@ -1,6 +1,6 @@
 export const render = () => {
     const page = document.querySelector('.page');
-    page.innerHTML = "<img src='../dist/photo-1490818387583-1baba5e638af.jpeg' height='300px' width='300px' style='margin: 50px;border-radius: 300px'>" +
+    page.innerHTML = "<img src='../src/img/photo-1490818387583-1baba5e638af.jpeg' height='300px' width='300px' style='margin: 50px;border-radius: 300px'>" +
         "<div class='wrapper' style='width: 500px'><h2 style=" +
         "\"font-family: 'Inria Serif', serif; font-style: italic; font-size: x-large; font-weight: normal" +
         "\">It all began a long time ago...</h2>" +
