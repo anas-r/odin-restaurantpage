@@ -4,6 +4,8 @@ import * as themenu from './themenu';
 import * as reservation from './reservation';
 import * as contact from './contact';
 
+import bgimg from '../img/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
+
 
 import '../styles.css';
 
@@ -89,7 +91,40 @@ const website = (() => {
             clearMenu(menuOptions);
             btn.classList.add("option-selected");
         });
-    }
+
+        page.addEventListener("mouseover",(e)=>{
+            const blurImg = document.querySelector('#blurred-img');
+            blurImg.setAttribute("style",`height: 100%;
+    width: 100%;
+    background-image: url("${bgimg}");
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    display: block;
+    background-size:cover;
+    filter: blur(15px);
+   `)
+        })
+
+    page.addEventListener("mouseleave",(e)=>{
+        const blurImg = document.querySelector('#blurred-img');
+        blurImg.setAttribute("style",`   height: 100%;
+         width: 100%;
+    background-image: url("${bgimg}");
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    display: block;
+    background-size:cover;
+
+    
+`)
+    })
+}
 
     return {render};
 })();

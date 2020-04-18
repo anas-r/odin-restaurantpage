@@ -13,7 +13,24 @@
 
 body {
     margin: 0;
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: block;
+    background: #422509;
+}
+#blurred-img {
+    height: 100%;
+    width: 100%;
     background-image: url("./img/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg");
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    display: block;
+    background-size:cover;
 }
 
 #content {
@@ -114,17 +131,6 @@ div.option-selected {
     grid-column: auto;
     justify-items: center;
     overflow: auto;
-    background-size: 500% 100%;
-    background-image: linear-gradient(
-            to right,
-            rgba(255,255,255,0),
-            rgba(0,0,0,0.25)
-    );
-
-}
-
-.page:hover {
-    background-position: right center;
 }
 
 .food-item {
