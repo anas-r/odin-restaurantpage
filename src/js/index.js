@@ -1,9 +1,13 @@
 import * as homepage from './homepage';
 import * as story from './story';
+import * as themenu from './themenu';
+import * as reservation from './reservation';
+import * as contact from './contact';
 
-import './styles.css';
 
-const menu = (() => {
+import '../styles.css';
+
+const website = (() => {
     const content = document.querySelector("#content");
     const clearMenu = (menuOptions) => {
         menuOptions.forEach((btn) => btn.classList.remove("option-selected"));
@@ -66,21 +70,21 @@ const menu = (() => {
         });
 
         menuOptions[3].addEventListener("click",(e) => {
-            homepage.render();
+            themenu.render();
             let btn = document.querySelector('#home-menu');
             clearMenu(menuOptions);
             btn.classList.add("option-selected");
         });
 
         menuOptions[4].addEventListener("click",(e) => {
-            homepage.render();
+            reservation.render();
             let btn = document.querySelector('#reservations');
             clearMenu(menuOptions);
             btn.classList.add("option-selected");
         });
 
         menuOptions[5].addEventListener("click",(e) => {
-            homepage.render();
+            contact.render();
             let btn = document.querySelector('#contact-us');
             clearMenu(menuOptions);
             btn.classList.add("option-selected");
@@ -91,4 +95,4 @@ const menu = (() => {
 })();
 
 
-menu.render();
+website.render();

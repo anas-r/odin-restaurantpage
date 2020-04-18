@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital@0;1&family=Lily+Script+One&family=Nunito:wght@400;700&display=swap');
 
 
-*{
-    font-family: 'Nunito',sans-serif;
+* {
+    font-family: 'Nunito', sans-serif;
     color: white;
     box-sizing: border-box;
     cursor: default;
     transition: all 0.2s ease-in-out;
     font-size: large;
-    text-shadow: 0px 0px 13px rgba(0, 0, 0, 1);}
+    text-shadow: 0 0 13px rgba(0, 0, 0, 1);
+}
 
 body {
     margin: 0;
     background-image: url("./img/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg");
 }
 
-#content  {
+#content {
     margin: 0;
     padding: 0;
-    background: rgba(229, 62, 62,0.15);
+    background: rgba(123,52,30, 0.15);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -30,13 +31,14 @@ body {
 
 .menu {
     display: grid;
-    margin: 20px 50px 20px 50px;
+    margin: 20px 50px 0 50px;
     height: 70px;
     padding-bottom: 15px;
     grid-template-areas: 'ph ph ph ph ph ph ph ph ph home story menu res contact';
     align-items: center;
-    border-bottom: solid rgba(255,255,255,0.15) 1px;
+    border-bottom: solid rgba(255, 255, 255, 0.15) 1px;
 }
+
 .menu-logo {
     cursor: default;
     display: flex;
@@ -47,43 +49,46 @@ body {
 
 .menu-option {
     cursor: pointer;
-    height : 70px;
+    height: 70px;
     display: flex;
 }
 
 .menu-logo > span {
-    font-family: 'Lily Script One',cursive;
+    font-family: 'Lily Script One', cursive;
     font-size: xx-large;
     cursor: default;
 }
 
 .menu-option > span {
     margin: auto;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
-#home{
+#home {
     grid-area: home;
     opacity: 1;
 }
 
-#story{
+#story {
     grid-area: story;
 }
-#home-menu{
+
+#home-menu {
     grid-area: menu;
 }
-#reservations{
+
+#reservations {
     grid-area: res;
 }
-#contact{
+
+#contact {
     grid-area: contact;
 }
 
 /* MENU OPTIONS FX */
 
 .menu-option:hover > span {
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     cursor: pointer;
 }
 
@@ -92,7 +97,7 @@ div.option-selected {
 }
 
 .option-selected span {
-color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     font-weight: bold;
     cursor: default;
 }
@@ -101,14 +106,82 @@ color: rgba(255,255,255,1);
 /* WHOLE PAGE */
 
 .page {
+    margin: auto;
     padding: 81px;
-    display: flex;
+    display: grid;
     height: 100%;
-    justify-content: center;
+    width: 100%;
+    grid-column: auto;
+    justify-items: center;
+    overflow: auto;
+    background-size: 500% 100%;
+    background-image: linear-gradient(
+            to right,
+            rgba(255,255,255,0),
+            rgba(0,0,0,0.25)
+    );
+
+}
+
+.page:hover {
+    background-position: right center;
+}
+
+.food-item {
+    margin: 25px;
+    width: 992px;
+    display: grid;
+    grid-template-areas: 'img title'
+    'img dsc'
+    'img dsc'
+    'img price'
+    'img price';
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+h2, .story-title {
+    font-family: 'Inria Serif', serif;
+    font-weight: normal;
+    font-size: xx-large;
+    font-style: italic;
+
+    grid-area: title;
+    margin-bottom: 0;
+    align-items: end;
+
+    margin-left: 31px;
+}
+
+.story-title {
+    height: 0;
+}
+
+.food-item img {
+    justify-items: end;
+    align-items: center;
+    grid-area: img;
+    border-radius: 300px;
+}
+
+.food-item p {
+    align-items: start;
+    grid-area: dsc;
+    margin-left: 31px;
+    margin-top: 0px;
+}
+
+.food-price {
+    align-items: start;
+    grid-area: price;
+    margin-left: 31px;
+    font-size: x-large;
 }
 
 .page > span {
-    font-family: 'Inria Serif',serif;
+    font-family: 'Inria Serif', serif;
     font-size: 3em;
     text-align: center;
     font-style: italic;
@@ -122,11 +195,11 @@ color: rgba(255,255,255,1);
     }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     #content {
         overflow: auto;
-
     }
+
     div.option-selected {
         border-bottom: solid white 0;
     }
@@ -138,36 +211,47 @@ color: rgba(255,255,255,1);
         text-align: center;
     }
 
-    img {
-        height: 300px;
-        width: 300px;
-    }
-
     .menu {
         display: grid;
         margin: 20px 50px 20px 50px;
         height: 400px;
         padding-bottom: 15px;
-        grid-template-areas:
-                'ph'
-        'home'
-                'story'
-        'menu'
-        'res'
-        'contact';
+        grid-template-areas: 'ph' 'home' 'story' 'menu' 'res' 'contact';
         align-items: center;
-        border-bottom: solid rgba(255,255,255,0) 1px;
+        border-bottom: solid rgba(255, 255, 255, 0) 1px;
     }
 
-    .page {
-        padding: 81px;
-        display: flex;
-        height: fit-content;
-        justify-content: center;
-        flex-direction: column;
-    }
+}
 
-    .page > span, .page > div {
-        margin: auto;
-    }
+/* FORM RESERVATION */
+
+label.description {
+    margin-left: 31px;
+}
+
+input, textarea {
+
+    width: 100%;
+    margin: 5px 31px 15px 31px;
+    color: black;
+    text-shadow: 0 0 13px rgba(0, 0, 0, 0);
+    resize: vertical;
+    opacity: 0.5;
+}
+
+input:hover,textarea:hover,input:focus,textarea:focus {
+    opacity: 1;
+}
+
+input.button_text {
+    width: 25%;
+    border-style: solid;
+    border-radius: 100px;
+    background: rgba(0,0,0,0);
+    color: white;
+}
+
+input.button_text:hover,input.button_text:focus {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 1px rgba(255,235,13,0.4),inset 0px 0px 10px 1px rgba(255,235,13,0.4);
 }
