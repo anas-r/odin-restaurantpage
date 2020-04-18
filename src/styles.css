@@ -155,22 +155,22 @@ h2, .story-title {
     margin-left: 31px;
 }
 
-.story-title {
-    height: 0;
-}
-
-.food-item img {
+img {
     justify-items: end;
     align-items: center;
     grid-area: img;
     border-radius: 300px;
 }
 
-.food-item p {
+.food-item p, .food-story p {
     align-items: start;
     grid-area: dsc;
     margin-left: 31px;
     margin-top: 0px;
+}
+
+.story-title {
+    margin: 31px;
 }
 
 .food-price {
@@ -178,6 +178,13 @@ h2, .story-title {
     grid-area: price;
     margin-left: 31px;
     font-size: x-large;
+}
+
+.food-story {
+    width: 992px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .page > span {
@@ -192,6 +199,10 @@ h2, .story-title {
     img {
         height: 150px;
         width: 150px;
+    }
+
+    .food-story, .food-item {
+        width: 600px;
     }
 }
 
@@ -219,6 +230,14 @@ h2, .story-title {
         grid-template-areas: 'ph' 'home' 'story' 'menu' 'res' 'contact';
         align-items: center;
         border-bottom: solid rgba(255, 255, 255, 0) 1px;
+    }
+
+    .food-story, .food-item {
+        width: 80vw;
+    }
+
+    * {
+        flex-direction: column;
     }
 
 }
